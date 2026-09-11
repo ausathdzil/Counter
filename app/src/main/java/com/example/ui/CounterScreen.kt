@@ -5,12 +5,6 @@ import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
-import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
-import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -134,11 +128,13 @@ fun CounterScreen(
             )
         }
     ) { innerPadding ->
-        // Full screen tap-to-count surface
+        // We apply equal padding to top and bottom to ensure the content is perfectly 
+        // centered on the screen, compensating for the height of the TopAppBar.
+        val verticalPadding = innerPadding.calculateTopPadding()
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding)
+                .padding(top = verticalPadding, bottom = verticalPadding)
                 .clickable(
                     interactionSource = remember { MutableInteractionSource() },
                     indication = null
@@ -149,35 +145,22 @@ fun CounterScreen(
                 .testTag("counter_tap_area"),
             contentAlignment = Alignment.Center
         ) {
-            AnimatedContent(
-                targetState = uiState.count,
-                transitionSpec = {
-                    if (targetState > initialState) {
-                        slideInVertically { height -> height / 3 } + fadeIn() togetherWith
-                                slideOutVertically { height -> -height / 3 } + fadeOut()
-                    } else {
-                        slideInVertically { height -> -height / 3 } + fadeIn() togetherWith
-                                slideOutVertically { height -> height / 3 } + fadeOut()
-                    }
-                },
-                label = "count_display_anim"
-            ) { targetCount ->
-                Text(
-                    text = targetCount.toString(),
-                    style = MaterialTheme.typography.displayLarge.copy(
-                        fontSize = when {
-                            targetCount.toString().length > 7 -> 72.sp
-                            targetCount.toString().length > 4 -> 96.sp
-                            else -> 128.sp
-                        },
-                        fontWeight = FontWeight.Light,
-                        letterSpacing = (-2).sp
-                    ),
-                    color = MaterialTheme.colorScheme.onBackground,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.testTag("counter_display")
-                )
-            }
+            val countText = uiState.count.toString()
+            Text(
+                text = countText,
+                style = MaterialTheme.typography.displayLarge.copy(
+                    fontSize = when {
+                        countText.length > 7 -> 72.sp
+                        countText.length > 4 -> 96.sp
+                        else -> 128.sp
+                    },
+                    fontWeight = FontWeight.Light,
+                    letterSpacing = (-2).sp
+                ),
+                color = MaterialTheme.colorScheme.onBackground,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.testTag("counter_display")
+            )
         }
     }
 }
