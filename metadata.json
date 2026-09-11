@@ -1,0 +1,6 @@
+{
+  "name": "Counter",
+  "description": "A minimal, easy-to-use generic counter with automatic system theme and manual dark mode toggle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

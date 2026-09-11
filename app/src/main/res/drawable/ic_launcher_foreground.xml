@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Center of canvas is 54, 54. 66dp safe zone is 21 to 87. -->
+    <!-- Mechanical clicker top button -->
+    <path
+        android:fillColor="#818CF8"
+        android:pathData="M50,23 h8 c1.5,0 2.5,1 2.5,2.5 v4 h-13 v-4 c0,-1.5 1,-2.5 2.5,-2.5 z" />
+
+    <!-- Clicker Main Body Shell (Rounded circle/oval) -->
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M54,29 C40,29 28,40 28,54 C28,68 40,79 54,79 C68,79 80,68 80,54 C80,40 68,29 54,29 Z" />
+
+    <!-- Inner bezel / display frame -->
+    <path
+        android:fillColor="#1E1B4B"
+        android:pathData="M37,45 h34 c2.2,0 4,1.8 4,4 v14 c0,2.2 -1.8,4 -4,4 h-34 c-2.2,0 -4,-1.8 -4,-4 v-14 c0,-2.2 1.8,-4 4,-4 z" />
+
+    <!-- Plus sign accent in display (representing increment) -->
+    <path
+        android:fillColor="#A5B4FC"
+        android:pathData="M43,54 h8 M47,50 v8"
+        android:strokeColor="#A5B4FC"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+
+    <!-- Digit '1' in display -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M61,50 l-3,2 v2.5 l3,-2 v8.5 h2.5 v-11 z" />
+
+    <!-- Finger ring loop below / right -->
+    <path
+        android:strokeColor="#818CF8"
+        android:strokeWidth="3"
+        android:pathData="M54,79 C54,82 51,85 48,85 C45,85 43,82 43,79" />
+</vector>

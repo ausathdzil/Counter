@@ -1,0 +1,33 @@
+package com.example.ui.theme
+
+import androidx.compose.ui.graphics.Color
+
+// Dark Theme (Optimized for Night Usage)
+val NightBackground = Color(0xFF090B10)
+val NightSurface = Color(0xFF131722)
+val NightSurfaceVariant = Color(0xFF1C2232)
+val NightPrimary = Color(0xFF818CF8)
+val NightOnPrimary = Color(0xFF0F111D)
+val NightPrimaryContainer = Color(0xFF282E54)
+val NightOnPrimaryContainer = Color(0xFFE0E7FF)
+val NightSecondary = Color(0xFF38BDF8)
+val NightOnSecondary = Color(0xFF082F49)
+val NightOnBackground = Color(0xFFF1F5F9)
+val NightOnSurface = Color(0xFFE2E8F0)
+val NightOnSurfaceVariant = Color(0xFF94A3B8)
+val NightOutline = Color(0xFF2A3449)
+
+// Light Theme (Clean Minimalist)
+val DayBackground = Color(0xFFF8FAFC)
+val DaySurface = Color(0xFFFFFFFF)
+val DaySurfaceVariant = Color(0xFFF1F5F9)
+val DayPrimary = Color(0xFF4F46E5)
+val DayOnPrimary = Color(0xFFFFFFFF)
+val DayPrimaryContainer = Color(0xFFEEF2FF)
+val DayOnPrimaryContainer = Color(0xFF312E81)
+val DaySecondary = Color(0xFF0284C7)
+val DayOnSecondary = Color(0xFFFFFFFF)
+val DayOnBackground = Color(0xFF0F172A)
+val DayOnSurface = Color(0xFF1E293B)
+val DayOnSurfaceVariant = Color(0xFF64748B)
+val DayOutline = Color(0xFFCBD5E1)
